@@ -157,25 +157,20 @@
             <p>
                 Dear Tripti,<br><br>
 
-                Aaj tumhara birthday hai, aur honest bolun toh hum chahe kitni bhi kam baat karte ho,
-                phir bhi tum un logon mein se ho jo dil mein ek soft si jagah bana kar reh jaate hain.
-                Zyada conversations nahi, lekin feelings hamesha clear hoti hain — tum waise hi
-                insaan lagti ho jinke liye sirf respect hi feel hota hai.<br><br>
+                Aaj ka din mere liye bahut hi khaas hai, kyunki aaj meri life ki sabse special person ka birthday hai
+                🎂✨. Tum meri zindagi ka wo hissa ho jo meri har khushi ko aur bhi khoobsurat bana deta hai. Jab se tum
+                meri life mein aayi ho, sab kuch aur bhi accha lagne laga hai ❤️. Tumhari smile meri sabse badi
+                happiness hai 😊 aur tumhari care mujhe hamesha special feel karwati hai.
 
-                Tumhari smile, tumhari simplicity, tumhara nature… sab ek alag hi vibe dete hain.
-                Isliye aaj ke din bas ek hi dua nikli hai — life tumhe utni hi khushiyan de jitni
-                tum deserve karti ho. Tumhare har sapne poore ho, har wish accept ho, aur tumhari
-                zindagi mein hamesha light hi light ho.<br><br>
+                Main bas ye chahta hoon ki tumhari life hamesha khushiyon se bhari rahe, tumhare saare dreams pure ho 🌟
+                aur tum hamesha aise hi muskurati raho. Tum meri life ki sabse pyari aur precious gift ho 🎁. Main sach
+                mein bahut lucky hoon ki tum meri life mein ho.<br><br>
 
-                Varsha, jo log kam baat karne ke baawajood yaad reh jaate hain… woh special hote hain.
-                Tum unhi mein se ho.<br><br>
+                <b>Happy Birthday meri jaan 🎉💖</b><br>
+                Love you so much darling 😘❤️.<br><br>
 
-                Happy Birthday, Varsha.
-                Stay happy, stay blessed, and stay the same beautiful soul you are.
-                <br><br>
 
-                With all my respect & warmth,<br>
-                <b></b>
+
             </p>
         </div>
 
@@ -582,6 +577,34 @@
 
         // Generate a new heart every 300 milliseconds
         setInterval(createHeart, 300);
+
+        // Slow Auto-Scroll implementation
+        let autoScrollSpeed = 0.5; // pixels per frame, adjust as needed (lower = slower)
+        let isUserScrolling = false;
+        let scrollTimeout;
+
+        function autoScroll() {
+            if (!isUserScrolling) {
+                window.scrollBy(0, autoScrollSpeed);
+            }
+            requestAnimationFrame(autoScroll);
+        }
+
+        // Detect if user deliberately scrolls so they don't fight the auto-scroll
+        window.addEventListener('wheel', () => {
+            isUserScrolling = true;
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => { isUserScrolling = false; }, 2000); // Resume auto scroll after 2s of inactivity
+        });
+
+        window.addEventListener('touchmove', () => {
+            isUserScrolling = true;
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => { isUserScrolling = false; }, 2000);
+        });
+
+        // Start scrolling loop
+        requestAnimationFrame(autoScroll);
     </script>
 
 </body>
