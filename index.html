@@ -141,45 +141,51 @@
 
     <!-- <div class="tap">(Tap anywhere to play birthday music 🎵)</div> -->
 
-    <!-- HERO -->
-    <div class="hero">
-        <div class="title">Happy Birthday Tripti baby 🎉</div>
-        <img src="tara.jpg" class="photo" id="banner" alt="V Photo">
+    <section id="page0" class="active" style="padding:0; min-height:100vh;">
+        <!-- HERO -->
+        <div class="hero">
+            <div class="title">Happy Birthday Tripti baby 🎉</div>
+            <img src="tara.jpg" class="photo" id="banner" alt="V Photo">
 
-        <div class="subtitle">A day as special as you…</div>
-    </div>
+            <div class="subtitle">A day as special as you…</div>
+        </div>
 
-    <!-- LETTER -->
-    <div class="letter-box">
-        <h2>My Birthday wishes For You 💌</h2>
+        <!-- LETTER -->
+        <div class="letter-box">
+            <h2>My Birthday wishes For You 💌</h2>
 
-        <p>
-            Dear Tripti,<br><br>
+            <p>
+                Dear Tripti,<br><br>
 
-            Aaj tumhara birthday hai, aur honest bolun toh hum chahe kitni bhi kam baat karte ho,
-            phir bhi tum un logon mein se ho jo dil mein ek soft si jagah bana kar reh jaate hain.
-            Zyada conversations nahi, lekin feelings hamesha clear hoti hain — tum waise hi
-            insaan lagti ho jinke liye sirf respect hi feel hota hai.<br><br>
+                Aaj tumhara birthday hai, aur honest bolun toh hum chahe kitni bhi kam baat karte ho,
+                phir bhi tum un logon mein se ho jo dil mein ek soft si jagah bana kar reh jaate hain.
+                Zyada conversations nahi, lekin feelings hamesha clear hoti hain — tum waise hi
+                insaan lagti ho jinke liye sirf respect hi feel hota hai.<br><br>
 
-            Tumhari smile, tumhari simplicity, tumhara nature… sab ek alag hi vibe dete hain.
-            Isliye aaj ke din bas ek hi dua nikli hai — life tumhe utni hi khushiyan de jitni
-            tum deserve karti ho. Tumhare har sapne poore ho, har wish accept ho, aur tumhari
-            zindagi mein hamesha light hi light ho.<br><br>
+                Tumhari smile, tumhari simplicity, tumhara nature… sab ek alag hi vibe dete hain.
+                Isliye aaj ke din bas ek hi dua nikli hai — life tumhe utni hi khushiyan de jitni
+                tum deserve karti ho. Tumhare har sapne poore ho, har wish accept ho, aur tumhari
+                zindagi mein hamesha light hi light ho.<br><br>
 
-            Varsha, jo log kam baat karne ke baawajood yaad reh jaate hain… woh special hote hain.
-            Tum unhi mein se ho.<br><br>
+                Varsha, jo log kam baat karne ke baawajood yaad reh jaate hain… woh special hote hain.
+                Tum unhi mein se ho.<br><br>
 
-            Happy Birthday, Varsha.
-            Stay happy, stay blessed, and stay the same beautiful soul you are.
-            <br><br>
+                Happy Birthday, Varsha.
+                Stay happy, stay blessed, and stay the same beautiful soul you are.
+                <br><br>
 
-            With all my respect & warmth,<br>
-            <b></b>
-        </p>
-    </div>
+                With all my respect & warmth,<br>
+                <b></b>
+            </p>
+        </div>
 
-    <!-- FOOTER -->
-    <div class="footer">Made with ❤ for Tripti</div>
+        <button onclick="nextPage('page1')"
+            style="display: block; margin: 30px auto; background: white; color: #ff4f9a; padding: 15px 35px; border-radius: 30px; font-size: 20px; border: none; cursor: pointer; font-weight: 600; box-shadow: 0 4px 15px rgba(255,255,255,0.4);">Start
+            Journey ✨</button>
+
+        <!-- FOOTER -->
+        <div class="footer">Made with ❤ for Tripti</div>
+    </section>
 
 </body>
 
@@ -204,6 +210,26 @@
         section {
             padding: 60px 20px;
             min-height: 100vh;
+            display: none;
+            /* Hide all sections by default so you can't scroll */
+        }
+
+        section.active {
+            display: block;
+            /* Show active section */
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h1,
@@ -332,9 +358,11 @@
             Aaj ka din unhi me से ek, tumhare naam…
         </p>
 
-        <button class="btn" onclick="location.href='#page2'">
-            Next → Your Lovely Photos ❤
-        </button>
+        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+            <button class="btn" style="margin: 15px 0; background: rgba(255,255,255,0.7); color: #333;"
+                onclick="nextPage('page0')">← Back</button>
+            <button class="btn" style="margin: 15px 0;" onclick="nextPage('page2')">Next → Lovely Photos ❤</button>
+        </div>
     </section>
 
     <!-- PAGE 2 -->
@@ -389,7 +417,11 @@
             <img src="p46.jpg" class="photo">
         </div>
 
-        <button class="btn" onclick="location.href='#page3'">Next → Letter 💌</button>
+        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+            <button class="btn" style="margin: 15px 0; background: rgba(255,255,255,0.7); color: #333;"
+                onclick="nextPage('page1')">← Back</button>
+            <button class="btn" style="margin: 15px 0;" onclick="nextPage('page3')">Next → Letter 💌</button>
+        </div>
     </section>
 
     <!-- PAGE 3 -->
@@ -419,7 +451,11 @@
             <b></b>
         </div>
 
-        <button class="btn" onclick="location.href='#page4'">Next → Special Lines ✨</button>
+        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+            <button class="btn" style="margin: 15px 0; background: rgba(255,255,255,0.7); color: #333;"
+                onclick="nextPage('page2')">← Back</button>
+            <button class="btn" style="margin: 15px 0;" onclick="nextPage('page4')">Next → Special Lines ✨</button>
+        </div>
     </section>
     <br><br>
     <!-- PAGE 4 -->
@@ -432,7 +468,11 @@
         <div class="moment">ki aaina 🪞 hum dekhte hain aur</div>
         <div class="moment"> nazar 👀💞 tum aati ho 🌹🥰."</div>
 
-        <button class="btn" onclick="location.href='#page5'">Next → Final Page 🎀</button>
+        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+            <button class="btn" style="margin: 15px 0; background: rgba(255,255,255,0.7); color: #333;"
+                onclick="nextPage('page3')">← Back</button>
+            <button class="btn" style="margin: 15px 0;" onclick="nextPage('page5')">Next → Final Page 🎀</button>
+        </div>
     </section>
 
     <!-- PAGE 5 -->
@@ -444,9 +484,17 @@
             <br><br>
             Happy Birthday, Tara
             I hope you smiled today. ❤
+        </p>
+
+        <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 10px;">
             <button class="btn" id="giftBtn"
-                style="margin-top: 40px; background: linear-gradient(45deg, #ff4f9a, #ff9ac7); color: white; padding: 15px 35px; font-size: 22px; box-shadow: 0 4px 15px rgba(255, 79, 154, 0.5); transform: scale(1); transition: transform 0.3s ease;">Mere
+                style="margin: 20px 0; background: linear-gradient(45deg, #ff4f9a, #ff9ac7); color: white; padding: 15px 35px; font-size: 22px; box-shadow: 0 4px 15px rgba(255, 79, 154, 0.5); transform: scale(1); transition: transform 0.3s ease;">Mere
                 tarf se ek taufa 🎁</button>
+
+            <button class="btn"
+                style="margin: 10px 0; background: rgba(255,255,255,0.7); color: #333; padding: 10px 25px; font-size: 16px;"
+                onclick="nextPage('page4')">← Back</button>
+        </div>
 
         <div class="footer">Made with ❤ for Tara</div>
     </section>
@@ -466,6 +514,13 @@
     </div>
 
     <script>
+        // Pagination logic
+        function nextPage(nextId) {
+            document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(nextId).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
         // Video logic
         const giftBtn = document.getElementById("giftBtn");
         const videoContainer = document.getElementById("videoContainer");
